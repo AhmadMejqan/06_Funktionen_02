@@ -10,6 +10,13 @@
 
 
 
+// Modul: Addition a + b |  Test:
+//ausgabe(addieren(3,3));
+function addieren(a,b) {
+    return a + b;
+}
+
+
 // Modul: Konsolenausgabe |  Test:
 //ausgabe("hi");
 function ausgabe(outputStr) {
