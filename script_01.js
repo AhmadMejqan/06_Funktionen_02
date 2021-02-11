@@ -4,20 +4,47 @@
 0. a+b / a-b/ a*b / a/b  // ergebnis c
 1. Dateneingabe + -überprüfung :: 
 2. Auswahl Rechenart :: 
-3. Fkt. Grundrechenarten :: 
+3. Fkt. Grundrechenarten :: check
 4. Ausgabe in Konsole :: check
 */
 
-// Modul: Division a / b |  Test:
-ausgabe(dividieren(1,2));
-ausgabe(dividieren(1,-2));
-ausgabe(dividieren(10,0));
-function dividieren(a,b) {
-    
-    if (b == 0) {
-        return "Division durch 0 nicht OK!";
-    }
 
+// Test
+rechner("+",10,4);
+rechner("-",10,4);
+rechner("*",10,4);
+rechner("/",10,4);
+rechner("/",10,0);
+rechner("#!?",10,0);
+function rechner(op,a,b) {
+
+    switch (op) {
+        case "+":
+            ausgabe(addieren(a,b));
+            break;
+        case "-":
+            ausgabe(subtrahieren(a,b));
+            break;
+        case "*":
+            ausgabe(multiplizieren(a,b));
+            break;
+        case "/":
+            ausgabe(dividieren(a,b));
+            break;
+        default:
+            ausgabe ("irgendwas ging schief!")  
+            break;
+    }
+}
+
+
+
+// Modul: Division a / b |  Test:
+// ausgabe(dividieren(1,2));
+// ausgabe(dividieren(1,-2));
+// ausgabe(dividieren(10,0));
+function dividieren(a,b) {
+    if (b == 0) {return "Division durch 0 nicht OK!";}
     return a/b;
 }
 
