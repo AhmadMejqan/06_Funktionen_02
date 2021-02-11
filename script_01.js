@@ -2,20 +2,40 @@
 /*** Rechner */
 /*
 0. a+b / a-b/ a*b / a/b  // ergebnis c
-1. Dateneingabe + -überprüfung :: 
+1. Dateneingabe + -überprüfung :: check
 2. Auswahl Rechenart :: check
 3. Fkt. Grundrechenarten :: check
 4. Ausgabe in Konsole :: check
 */
 
-ausgabe(rechner(getOp(),getZahl("1"),getZahl("2")));
+// Modul: Gesamtfunktionalität | Test:
+//start()
+function start() {
+    ausgabe(rechner(getOp(),getZahl("1"),getZahl("2")));
+}
 
 // Modul: Operand eingeben | Test:
 //ausgabe(getOp());
 function getOp() {
     let op = prompt("Bitte +|-|*|/ eingeben.")
-    // ToDo: Plausibilität!
+    while (!checkOp(op)) {
+        op = prompt("Bitte einen korrekten Operator eingeben.") 
+    }
     return op;
+}
+
+// Modul: Operand überprüfen | Test:
+// ausgabe(checkOp("+"));
+// ausgabe(checkOp("-"));
+// ausgabe(checkOp("*"));
+// ausgabe(checkOp("/"));
+// ausgabe(checkOp("kglöfdkgdüoü#"));
+function checkOp(checkStr) {
+    // ODER (OR) - Verknüpfung
+    return  (checkStr =="+") || 
+            (checkStr =="-") || 
+            (checkStr =="*") || 
+            (checkStr =="/");
 }
 
 // Modul: Zahl 1 eingeben | Test:
@@ -28,7 +48,6 @@ function getZahl(numStr) {
    }
     return zahl;
 }
-
 
 // Modul: Rechenart auswählen | Test:
 //ausgabe(rechner("+",10,4));
