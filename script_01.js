@@ -14,14 +14,11 @@ ausgabe(dividieren(1,-2));
 ausgabe(dividieren(10,0));
 function dividieren(a,b) {
     
-    if (b != 0) {
-        // b ist nicht 0 / dividieren
-        return a / b;
-    } else {
-        // b ist 0 / warnmeldung ausgeben
+    if (b == 0) {
         return "Division durch 0 nicht OK!";
     }
-    
+
+    return a/b;
 }
 
 // Modul: Multiplikation a * b |  Test:
