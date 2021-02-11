@@ -3,41 +3,33 @@
 /*
 0. a+b / a-b/ a*b / a/b  // ergebnis c
 1. Dateneingabe + -überprüfung :: 
-2. Auswahl Rechenart :: 
+2. Auswahl Rechenart :: check
 3. Fkt. Grundrechenarten :: check
 4. Ausgabe in Konsole :: check
 */
 
 
-// Test
-rechner("+",10,4);
-rechner("-",10,4);
-rechner("*",10,4);
-rechner("/",10,4);
-rechner("/",10,0);
-rechner("#!?",10,0);
+// Modul: Rechenart auswählen | Test:
+//ausgabe(rechner("+",10,4));
+// ausgabe(rechner("-",10,4));
+//ausgabe(rechner("*",10,4));
+// ausgabe(rechner("/",10,4));
+// ausgabe(rechner("/",10,0));
+// ausgabe(rechner("#!?",10,0));
 function rechner(op,a,b) {
-
     switch (op) {
         case "+":
-            ausgabe(addieren(a,b));
-            break;
+            return addieren(a,b);
         case "-":
-            ausgabe(subtrahieren(a,b));
-            break;
+            return subtrahieren(a,b);
         case "*":
-            ausgabe(multiplizieren(a,b));
-            break;
+            return multiplizieren(a,b);
         case "/":
-            ausgabe(dividieren(a,b));
-            break;
+            return dividieren(a,b);
         default:
-            ausgabe ("irgendwas ging schief!")  
-            break;
+            return "Irgendwas ging schief!"; 
     }
 }
-
-
 
 // Modul: Division a / b |  Test:
 // ausgabe(dividieren(1,2));
