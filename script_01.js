@@ -8,6 +8,27 @@
 4. Ausgabe in Konsole :: check
 */
 
+ausgabe(rechner(getOp(),getZahl("1"),getZahl("2")));
+
+// Modul: Operand eingeben | Test:
+//ausgabe(getOp());
+function getOp() {
+    let op = prompt("Bitte +|-|*|/ eingeben.")
+    // ToDo: Plausibilität!
+    return op;
+}
+
+// Modul: Zahl 1 eingeben | Test:
+//ausgabe(getZahl("1"));
+//ausgabe(getZahl("2"));
+function getZahl(numStr) {  
+    let zahl = parseInt(prompt("Bitte Zahl " + numStr + " eingeben."));
+   while (isNaN(zahl)) {
+        zahl = parseInt(prompt("Das ist keine Zahl. Bitte nochmal:"));
+   }
+    return zahl;
+}
+
 
 // Modul: Rechenart auswählen | Test:
 //ausgabe(rechner("+",10,4));
